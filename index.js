@@ -11,14 +11,16 @@ btns.forEach((button, index) => {
         input.value = str
     })
 })
-//evaluation
+//evaluation of expression function
 function solve(string) {
     string = string.replaceAll(' ', '')
     return eval(string)
 }
+//expression evalution and error handeling
 equal.addEventListener('click', () => {
     try {
-        input.value = solve(str)
+        let num=solve(str)
+        input.value =Math.round(num*1000)/1000
         str = ""
     } catch (e) {
        alert("WRONG EXPRESSION Please Reset!!")
